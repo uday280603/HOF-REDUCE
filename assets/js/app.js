@@ -159,3 +159,83 @@ let cricketPlayers = [
 // cl(result)
 
 //********************************************************************************/
+
+//Task - 7 = Total Runs of Onlly  Batsmen 
+//Method 1 - for
+// let res = [];
+// for(let i = 0 ;i < cricketPlayers.length ;i++){
+//   if( cricketPlayers[i].role === "Batsman"){
+//     res.push(`${cricketPlayers[i].name} - Total runs = ${cricketPlayers[i].runs}`);
+//   }
+// };
+// cl(res);
+
+//Method -2 = Using foreach
+// let res=[];
+// cricketPlayers.forEach((param) =>{
+//   if(param.role =="Batsman"){
+//     res.push(`${param.name} - Total  runs =${param.runs}`);
+//   }
+// });
+// cl(res);
+//Method -3 = Reduce
+// let result = cricketPlayers.reduce((acc,cv) =>{
+
+//   if(cv.role === "Batsman"){
+//     acc.push(`${cv.name} - Total Runs = ${cv.runs}`);
+//   }
+//   return acc;
+// },[]);
+// cl(result);
+
+//********************************************************************************/
+//Task 8 – Players Who Played More Than 150 Matches
+//Method 1 - for
+// let res =[];
+// for(let i=0 ; i<cricketPlayers.length ;i++){
+//   if(cricketPlayers[i].matches >=150){
+//     res.push(`${cricketPlayers[i].name}`)
+//   }
+// }
+// cl(res);
+
+//Method 2 - forEach
+// let res = [];
+// cricketPlayers.forEach((param) =>{
+//   if(param.matches >= 150){
+//     res.push(`${param.name}`);
+//   }
+// });
+// cl(res);
+
+//Method -3 = Reduce
+// let result = cricketPlayers.reduce((acc,cv)=>{
+
+//   if(cv.matches >= 150){
+//     acc.push(`${cv.name}`)
+//   }
+//  return acc;
+// },[]);
+// cl(result)
+  
+//********************************************************************************/
+
+//Task 9 - Highest Run Scorer (Name + Runs)
+//Method 1 = for
+// let res = [];
+// for(let i = 0; i<cricketPlayers.length ; i++){
+//   if(cricketPlayers[i].role === "Batsman"){
+//     res.push(`${cricketPlayers[i].name}`)
+//   }
+// }
+// cl(res);
+
+let maxRuns = 0;
+let topPlayer = "";
+for(let i = 0; i < cricketPlayers.length; i++){
+  if(cricketPlayers[i].runs && cricketPlayers[i].runs > maxRuns){
+    maxRuns = cricketPlayers[i].runs;
+    topPlayer = cricketPlayers[i].name;
+  }
+}
+cl(`${topPlayer}`);
